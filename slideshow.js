@@ -11,3 +11,21 @@ function changeImageAndUrl() {
     document.getElementById('slideshowLink').href = urls[index];
     document.getElementById('projectTitle').textContent = titles[index];
 }
+var prevButton = document.getElementById('prevButton');
+var nextButton = document.getElementById('nextButton');
+
+prevButton.addEventListener('click', function() {
+    index = (index - 1 + images.length) % images.length; // This ensures we cycle back to the last image and URL when we're at the first one
+    changeImageAndUrl();
+});
+
+nextButton.addEventListener('click', function() {
+    index = (index + 1) % images.length; // This ensures we cycle back to the first image and URL when we've gone through all of them
+    changeImageAndUrl();
+});
+
+function changeImageAndUrl() {
+    document.getElementById('slideshowImage').src = images[index];
+    document.getElementById('slideshowLink').href = urls[index];
+    document.getElementById('projectTitle').textContent = titles[index];
+}
