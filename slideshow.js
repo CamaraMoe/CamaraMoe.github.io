@@ -1,0 +1,13 @@
+var index = 0;
+var images = ["fillerimage.jpg", "fillerimage.jpg", "fillerimage.jpg", "fillerimage.jpg"]; // Add the paths of your images here.
+var urls = ["project1.html", "project2.html", "project3.html", "project4.html"]; // Add the URLs of your projects here.
+var titles = ["Project 1", "Project 2", "Project 3", "Project 4"]; // Add the titles of your projects here.
+
+setInterval(changeImageAndUrl, 5000); // Change image and URL every 5000 milliseconds = 5 seconds
+
+function changeImageAndUrl() {
+    index = (index + 1) % images.length; // This ensures we cycle back to the first image and URL when we've gone through all of them
+    document.getElementById('slideshowImage').src = images[index];
+    document.getElementById('slideshowLink').href = urls[index];
+    document.getElementById('projectTitle').textContent = titles[index];
+}
