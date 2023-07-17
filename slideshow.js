@@ -1,6 +1,6 @@
 var index = 0;
 var images = ["fillerimage.jpg", "fillerimage.jpg", "fillerimage.jpg", "fillerimage.jpg"]; // Add the paths of your images here.
-var urls = ["project1.html", "project2.html", "project3.html", "project4.html"]; // Add the URLs of your projects here.
+var urls = ["thank you for your patience.jpg", "thank you for your patience.jpg", "thank you for your patience.jpg", "thank you for your patience.jpg"]; // Add the URLs of your projects here.
 var titles = ["Project 1", "Project 2", "Project 3", "Project 4"]; // Add the titles of your projects here.
 
 setInterval(changeImageAndUrl, 5000); // Change image and URL every 5000 milliseconds = 5 seconds
