@@ -1,64 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome To My Journey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Index Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body> 
-    <div class ="banner"> 
-        <div class = "navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Education.html">Education</a></li>
-                <li><a href="Projects.html">Projects</a></li>
-                <li><a href="Aboutme.html">About Me</a></li>
+<body>
+    <nav class="navbar navbar-expand navbar-light bg-transparent fixed-top">
+        <div class="mx-auto d-flex">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://www.linkedin.com/in/camaramoe/"><i class="fab fa-linkedin"></i></a> <!-- LinkedIn Icon -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-columns"></i></a> <!-- Main Website  -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/CamaraMoe"><i class="fab fa-github"></i></a> <!-- GitHub Icon -->
+                </li>
             </ul>
         </div>
-        <div class="fade-in">
-        <div class="title">
-            <h1>Welcome To My Journey</h1>
-            <div class="introduction">
-                <section>
-                    <p>Hello and welcome to my portfolio!</p>
-                    <p>I'm Mohamed Camara, an aspiring cybersecurity professional dedicated to mastering the ever-evolving landscapes of technology and security. Currently, I'm pursuing my studies in cybersecurity, equipped with a thirst for learning and a passion for protecting the digital world from existing and emerging threats.</p>
-                    <p>As you navigate my portfolio, you'll come across a range of projects that underline my skills, knowledge, and experiences in various areas of cybersecurity. These projects include penetration testing, secure network design, risk assessment, and digital forensics, among others. Each piece of work is a testament to my relentless pursuit of excellence, detail-oriented mindset, and ability to think outside the box when addressing complex problems.</p>
-                    <p>I have a keen interest in ethical hacking and love diving deep into the intricacies of secure system design and implementation. Whether it's hardening an organization's digital defenses or building an application with security as a priority, I thrive on challenges and revel in the opportunity to apply my knowledge and skills.</p>
-                    <p>This portfolio is more than just a showcase of my work. It's a reflection of my journey in the field of cybersecurity - a journey fuelled by curiosity, passion, and a strong desire to make a positive impact in this ever-essential industry.</p>
-                    <p>Thank you for taking the time to explore my portfolio. I hope it provides a clear insight into my capabilities and the value I could bring to any cybersecurity role. I'm always open to opportunities, collaboration, or just a friendly chat about all things cybersecurity, so don't hesitate to get in touch.</p>
-                    <p>Stay safe in the digital world!</p>
-                </section>
-            </div>
-            <section class="featured-projects">
-                <h2>Featured Projects</h2>
-                <div class="projects-grid">
-                    <div class="project" id="project">
-                        <div class="navigation">
-                            <button id="prevButton" type="button">
-                                <span class="btn-text">Previous</span>
-                                <span class="btn-bg"></span>
-                            </button>
-                            <button id="nextButton" type="button">
-                                <span class="btn-text">Next</span>
-                                <span class="btn-bg"></span>
-                            </button>
-                        </div>
-                        
-                        <a id="slideshowLink" href="thank you for your patience.jpg">
-                            <img id="slideshowImage" src="fillerimage.jpg" alt="Project 1">
-                            <p id="projectTitle">Project 1</p>
-                        </a>
-                    </div>
-                </div>
-            </section>            
-            <button onclick="location.href='Contactme.html'" type="button">
-                <span class="btn-text">Contact Me</span>
-                <span class="btn-bg"></span>
-            </button>            
+    </nav>
+
+    <div style="height: 1500px; padding-top:60px;">
+        <div class="flex-container">
+            <h1><div class="typing">Welcome To My Journey!</div><span class="cursor"></span></h1>
+        </div>
+
+        <!-- Content to be shown when scrolled down -->
+        <div id="content" class="content-container hidden">
+            <p class="typing-content">Hello and welcome to my portfolio!
+                <p>I'm Mohamed Camara, an aspiring cybersecurity professional dedicated to mastering the ever-evolving landscapes of technology and security. Currently, I'm pursuing my studies in cybersecurity, equipped with a thirst for learning and a passion for protecting the digital world from existing and emerging threats.
+
+                As you navigate my portfolio, you'll come across a range of projects that underline my skills, knowledge, and experiences in various areas of cybersecurity. These projects include penetration testing, secure network design, risk assessment, and digital forensics, among others. Each piece of work is a testament to my relentless pursuit of excellence, detail-oriented mindset, and ability to think outside the box when addressing complex problems.
+
+                I have a keen interest in ethical hacking and love diving deep into the intricacies of secure system design and implementation. Whether it's hardening an organization's digital defenses or building an application with security as a priority, I thrive on challenges and revel in the opportunity to apply my knowledge and skills.
+
+                This portfolio is more than just a showcase of my work. It's a reflection of my journey in the field of cybersecurity - a journey fuelled by curiosity, passion, and a strong desire to make a positive impact in this ever-essential industry.
+
+                Thank you for taking the time to explore my portfolio. I hope it provides a clear insight into my capabilities and the value I could bring to any cybersecurity role. I'm always open to opportunities, collaboration, or just a friendly chat about all things cybersecurity, so don't hesitate to get in touch.
+                </p>Stay safe in the digital world!</p>
         </div>
     </div>
-    </div>
-    <script src="slideshow.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scroll.js"></script>
 </body>
 </html>

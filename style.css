@@ -1,336 +1,101 @@
-*{
+body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
+    background: url('background.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-.banner {
-    /* Remove background properties from here */
-    padding-top: 70px;
+.navbar {
     width: 100%;
-    min-height: 100vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-}
-
-.navbar{
-    width: 100%;
-    padding: 20px 0;
+    height: 60px;
     position: fixed;
     top: 0;
-    background-color: rgba(0,0,0,0.75); /* Add background color to navbar when scrolling */
-    z-index: 1000; /* Ensure the navbar is above all other elements on the page */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    z-index: 100;
 }
 
-.navbar ul {
-    display: inline-block;
-}
-
-.navbar ul li{
-    list-style: none;
-    display: inline-block;
-    margin: 0 20px;
-    position:relative;
-}
-
-.navbar ul li a{
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
+}
+
+.nav-item i {
     color: white;
-    text-transform: uppercase;
+    font-size: 24px; /* Adjust size as needed */
+    transition: all 0.5s ease;
+    margin-right: 1.5rem; /* adjust for desired spacing */
 }
 
-.navbar ul li::after{
-    content: '';
-    height: 3px;
-    width: 0;
-    background: #009688;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    transition: 0.5s;
+.nav-item a:hover i {
+    color: limegreen; /* Change to desired hover color */
 }
 
-.navbar ul li:hover::after{
-    width: 100%;
+.nav-item a i {
+    transition: color 0.5s;
 }
 
-.title {
-    width: 100%;
-    text-align: center;
+.flex-container {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typing {
     color: white;
-    padding: 20px;  
-}
-
-.title h1{
-    font-size: 70px;
-    margin-top: 80px;
-}
-
-.title p{
-    margin: 20px auto;
-    font-weight: 100;
-    line-height: 25px;
-}
-
-button {
-    width: 200px;
-    padding: 15px 0;
-    text-align: center;
-    margin: 20px 10px;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid #009688;
-    background: transparent;
-    color: white;
-    cursor: pointer;
-    position: relative;
+    border-right: .15em solid rgba(12, 161, 1, 0.74); /* The typewriter cursor */
     overflow: hidden;
-    z-index: 1;
+    white-space: nowrap;
+    animation:
+        typing 4s steps(30, end),
+        blink-caret .75s step-end infinite;
 }
 
-button .btn-text {
-    position: relative;
-    z-index: 3;
+.flex-container {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-button .btn-bg {
-    background: #009688;
-    height: 100%;
-    width: 0;
-    border-radius: 25px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    transition: 0.5s;
-    z-index: 2;
+/* The typing effect */
+@keyframes typing {
+    0% { width: 0; }
+    100% { width: 100%; }
 }
 
-button:hover {
-    color: transparent;
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: rgb(19, 205, 69); }
 }
 
-button:hover .btn-bg{
-    width: 100%;
-}
 
-button:hover .btn-text {
-    color: #fff;
-}
 
-.introduction {
+.content-container {
+    padding: 2rem; /* Reduce this from 5rem to move the paragraph up */
+    color: white;
+    font-size: 1rem;
     text-align: left;
+    border: 1px solid white;
     margin: 0 auto;
-    width: 70%;
+    max-width: 80%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+    height: auto;
+    justify-content: normal;
+    align-items: normal;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0.5s;
 }
 
-.projects-grid .project img {
-    width: 100px;    /* adjust this value to desired width */
-    height: auto;    /* keeping this as auto preserves the aspect ratio of the image */
-}
-
-.navigation {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.navigation button {
-    width: 150px;
-    padding: 15px 0;
-    text-align: center;
-    margin: 20px 10px;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid #009688;
-    background: transparent;
-    color: white;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.navigation button .btn-text {
-    position: relative;
-    z-index: 3;
-}
-
-.navigation button .btn-bg {
-    background: #009688;
-    height: 100%;
-    width: 0;
-    border-radius: 25px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    transition: 0.5s;
-    z-index: 2;
-}
-
-.navigation button:hover {
-    color: transparent;
-}
-
-.navigation button:hover .btn-bg{
-    width: 100%;
-}
-
-.navigation button:hover .btn-text {
-    color: #fff;
-}
-
-/* Contactme css */
-
-.contact-section {
-    padding: 50px;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contact-section h1 {
-    margin-bottom: 20px;
-}
-
-.contact-section form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contact-section form input,
-.contact-section form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background: rgba(255, 255, 255, 0.9);
-}
-
-.styled-button {
-    position: relative;
-    display: inline-block;
-    margin-top: 20px;
-    border: 2px solid #009688;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: .3s;
-    cursor: pointer;
-    background-color: transparent;
-}
-
-.styled-button .btn-bg {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #009688;
-    z-index: -1;
-    transition: .3s;
-    transform: scaleX(0);
-    transform-origin: left;
-}
-
-.styled-button:hover {
-    color: white;
-}
-
-.styled-button:hover .btn-bg {
-    transform: scaleX(1);
-}
-
-
-/* Page Transition */
-
-.fade-in {
-    animation: fadeIn ease 2s;
-    -webkit-animation: fadeIn ease 2s;
-    -moz-animation: fadeIn ease 2s;
-    -o-animation: fadeIn ease 2s;
-    -ms-animation: fadeIn ease 2s;
-}
-@keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-}
-
-/* Firefox < 16 */
-@-moz-keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-}
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-}
-
-/* Internet Explorer */
-@-ms-keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-}
-
-/* Opera < 12.1 */
-@-o-keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-}
-body {
-    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('background.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-}
-
-
-
-/* Blurr */ 
-
-.info-section {
-    top: 10%;
-    max-width: 80%; /* Do not let the sections take up the full width */
-    margin: auto; /* Center the sections */
-    position: relative; /* Make sure the div is positioned relative to this section */
-    background: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
-    border: 2px solid #009688; /* Green border */
-    backdrop-filter: blur(10px); /* Blur the background */
-    padding: 20px; /* Some padding to keep the content inside the box */
-    width: 80%; /* Adjust this as necessary */
-    z-index: 1; /* Make sure this is lower than the z-index of .navbar */
-    padding-top: 0; /* add this line to ensure no padding at the top */
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-.page-wrapper {
-    width: 100%;
-    min-height: 100vh;
-    background-image: linear-gradient(rgb(0,0,0,0.75), rgba(0,0,0,0.75)),url(background.jpg);
-    background-size: cover;
-    background-position: center;
-}
-.banner-edu {
-    padding-top: 30px;
-    width: 100%;
-    min-height: 100vh;
-    color: white;
-    z-index: 1; 
-}
-.content-area {
-    margin-top: 50px;  /* Adjust this value to your preference */
-}
