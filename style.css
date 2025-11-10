@@ -1,101 +1,148 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: url('background.jpg') no-repeat center center fixed; 
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    color: #f8f9fa;
 }
 
 .navbar {
-    width: 100%;
-    height: 60px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgb(255, 255, 255);
-    z-index: 100;
+    transition: background-color 0.3s ease;
 }
 
-.navbar a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.1rem;
 }
 
-.nav-item i {
-    color: white;
-    font-size: 24px; /* Adjust size as needed */
-    transition: all 0.5s ease;
-    margin-right: 1.5rem; /* adjust for desired spacing */
-}
-
-.nav-item a:hover i {
-    color: limegreen; /* Change to desired hover color */
-}
-
-.nav-item a i {
-    transition: color 0.5s;
-}
-
-.flex-container {
-    height: 90vh;
+.nav-link {
+    color: #f8f9fa !important;
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: #28a745 !important;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.nav-link:focus-visible {
+    outline: 3px solid #28a745;
+    outline-offset: 2px;
+}
+
+.hero {
+    min-height: 100vh;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.hero .display-4 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.hero .lead {
+    color: #d4d4d4;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.hero-actions .btn {
+    margin: 0.5rem;
+    min-width: 200px;
 }
 
 .typing {
-    color: white;
-    border-right: .15em solid rgba(12, 161, 1, 0.74); /* The typewriter cursor */
+    border-right: 0.15em solid rgba(12, 161, 1, 0.74);
     overflow: hidden;
     white-space: nowrap;
-    animation:
-        typing 4s steps(30, end),
-        blink-caret .75s step-end infinite;
+    display: inline-block;
+    animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
 }
 
-.flex-container {
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.cursor {
+    display: inline-block;
+    width: 0.15em;
+    height: 1.2em;
+    background-color: rgba(12, 161, 1, 0.74);
+    margin-left: 0.1em;
+    animation: blink-caret 0.75s step-end infinite;
 }
 
-/* The typing effect */
 @keyframes typing {
     0% { width: 0; }
     100% { width: 100%; }
 }
 
-/* The typewriter cursor effect */
 @keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: rgb(19, 205, 69); }
+    from, to { opacity: 0; }
+    50% { opacity: 1; }
 }
-
-
 
 .content-container {
-    padding: 2rem; /* Reduce this from 5rem to move the paragraph up */
-    color: white;
-    font-size: 1rem;
-    text-align: left;
-    border: 1px solid white;
-    margin: 0 auto;
-    max-width: 80%;
-    backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.5);
-    height: auto;
-    justify-content: normal;
-    align-items: normal;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out 0.5s;
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    background-color: rgba(0, 0, 0, 0.75);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #ffffff;
 }
 
+.content-container h2 {
+    font-weight: 700;
+    color: #28a745;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+footer small {
+    letter-spacing: 0.08rem;
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding-top: 7rem;
+        padding-bottom: 4rem;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .nav-link {
+        width: auto;
+        height: auto;
+        padding: 0.5rem 1rem;
+        border-radius: 999px;
+    }
+}
