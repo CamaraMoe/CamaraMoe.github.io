@@ -1,60 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Index Page</title>
+    <meta name="description" content="Mohamed Camara's cybersecurity portfolio showcasing projects, experience, and contact information.">
+    <title>Mohamed Camara | Cybersecurity Portfolio</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand navbar-light bg-transparent fixed-top">
-        <div class="mx-auto d-flex">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="https://www.linkedin.com/in/camaramoe/"><i class="fab fa-linkedin"></i></a> <!-- LinkedIn Icon -->
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-columns"></i></a> <!-- Main Website  -->
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/CamaraMoe"><i class="fab fa-github"></i></a> <!-- GitHub Icon -->
-                </li>
-            </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#hero">MC</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.linkedin.com/in/camaramoe/" aria-label="LinkedIn profile">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                                <span class="sr-only">LinkedIn</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about" aria-label="About section">
+                                <i class="fas fa-columns" aria-hidden="true"></i>
+                                <span class="sr-only">About</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/CamaraMoe" aria-label="GitHub profile">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span class="sr-only">GitHub</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero d-flex align-items-center">
+            <div class="container text-center">
+                <h1 class="display-4">Welcome to My Journey</h1>
+                <p class="lead">Exploring the ever-evolving world of cybersecurity with curiosity, resilience, and purpose.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-dark btn-lg" href="#about">View Projects</a>
+                    <a class="btn btn-outline-dark btn-lg" href="https://www.linkedin.com/in/camaramoe/">Connect with Me</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-5">
+            <div class="container">
+                <div class="content-container fade-in" tabindex="0">
+                    <h2 class="mb-4">About Me</h2>
+                    <p>Hello and welcome to my portfolio! I'm Mohamed Camara, an aspiring cybersecurity professional dedicated to mastering the ever-evolving landscape of technology and security. Currently, I'm pursuing my studies in cybersecurity with a passion for protecting the digital world from emerging threats.</p>
+                    <p>As you explore my work, you'll come across projects that highlight my skills in penetration testing, secure network design, risk assessment, and digital forensics. Each piece reflects my commitment to excellence, attention to detail, and ability to think outside the box when tackling complex problems.</p>
+                    <p>I have a keen interest in ethical hacking and enjoy diving deep into the intricacies of secure system design and implementation. Whether it's hardening an organization's defenses or building an application with security at its core, I thrive on challenges and the opportunity to apply my knowledge.</p>
+                    <p>This portfolio is more than a showcase—it's a reflection of my journey in cybersecurity, fueled by curiosity and a desire to make a positive impact. I'm always open to opportunities, collaborations, or simply discussing all things cybersecurity, so feel free to reach out.</p>
+                    <p class="font-italic">Stay safe in the digital world!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-4 text-center text-light">
+        <div class="container">
+            <small>&copy; <span id="year"></span> Mohamed Camara. All rights reserved.</small>
         </div>
-    </nav>
-
-    <div style="height: 1500px; padding-top:60px;">
-        <div class="flex-container">
-            <h1><div class="typing">Welcome To My Journey!</div><span class="cursor"></span></h1>
-        </div>
-
-        <!-- Content to be shown when scrolled down -->
-        <div id="content" class="content-container hidden">
-            <p class="typing-content">Hello and welcome to my portfolio!
-                <p>I'm Mohamed Camara, an aspiring cybersecurity professional dedicated to mastering the ever-evolving landscapes of technology and security. Currently, I'm pursuing my studies in cybersecurity, equipped with a thirst for learning and a passion for protecting the digital world from existing and emerging threats.
-
-                As you navigate my portfolio, you'll come across a range of projects that underline my skills, knowledge, and experiences in various areas of cybersecurity. These projects include penetration testing, secure network design, risk assessment, and digital forensics, among others. Each piece of work is a testament to my relentless pursuit of excellence, detail-oriented mindset, and ability to think outside the box when addressing complex problems.
-
-                I have a keen interest in ethical hacking and love diving deep into the intricacies of secure system design and implementation. Whether it's hardening an organization's digital defenses or building an application with security as a priority, I thrive on challenges and revel in the opportunity to apply my knowledge and skills.
-
-                This portfolio is more than just a showcase of my work. It's a reflection of my journey in the field of cybersecurity - a journey fuelled by curiosity, passion, and a strong desire to make a positive impact in this ever-essential industry.
-
-                Thank you for taking the time to explore my portfolio. I hope it provides a clear insight into my capabilities and the value I could bring to any cybersecurity role. I'm always open to opportunities, collaboration, or just a friendly chat about all things cybersecurity, so don't hesitate to get in touch.
-                </p>Stay safe in the digital world!</p>
-        </div>
-    </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="scroll.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

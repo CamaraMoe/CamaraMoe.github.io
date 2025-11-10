@@ -1,101 +1,128 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: url('background.jpg') no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f5f7;
+    color: #1d1d1f;
 }
 
 .navbar {
-    width: 100%;
-    height: 60px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgb(255, 255, 255);
-    z-index: 100;
+    background-color: rgba(245, 245, 247, 0.9);
+    backdrop-filter: blur(12px);
+    transition: background-color 0.3s ease;
 }
 
-.navbar a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+.navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.12rem;
+    color: #1d1d1f !important;
+}
+
+.nav-link {
+    color: #1d1d1f !important;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.75rem;
+    border-radius: 999px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #000000 !important;
     text-decoration: none;
+    transform: translateY(-1px);
 }
 
-.nav-item i {
-    color: white;
-    font-size: 24px; /* Adjust size as needed */
-    transition: all 0.5s ease;
-    margin-right: 1.5rem; /* adjust for desired spacing */
+.nav-link:focus-visible {
+    outline: 3px solid rgba(0, 0, 0, 0.3);
+    outline-offset: 2px;
 }
 
-.nav-item a:hover i {
-    color: limegreen; /* Change to desired hover color */
+.hero {
+    min-height: 100vh;
+    padding-top: 7rem;
+    padding-bottom: 6rem;
+    background: linear-gradient(160deg, #ffffff 0%, #f5f5f7 100%);
 }
 
-.nav-item a i {
-    transition: color 0.5s;
+.hero .display-4 {
+    color: #1d1d1f;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
 }
 
-.flex-container {
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.hero .lead {
+    color: #515154;
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.2rem;
 }
 
-.typing {
-    color: white;
-    border-right: .15em solid rgba(12, 161, 1, 0.74); /* The typewriter cursor */
-    overflow: hidden;
-    white-space: nowrap;
-    animation:
-        typing 4s steps(30, end),
-        blink-caret .75s step-end infinite;
+.hero-actions .btn {
+    margin: 0.5rem;
+    min-width: 200px;
+    border-radius: 999px;
+    padding: 0.85rem 1.5rem;
 }
 
-.flex-container {
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.hero-actions .btn-outline-dark {
+    background-color: transparent;
+    border-width: 2px;
 }
 
-/* The typing effect */
-@keyframes typing {
-    0% { width: 0; }
-    100% { width: 100%; }
+.hero-actions .btn-outline-dark:hover,
+.hero-actions .btn-outline-dark:focus {
+    background-color: #1d1d1f;
+    color: #ffffff !important;
 }
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: rgb(19, 205, 69); }
-}
-
-
 
 .content-container {
-    padding: 2rem; /* Reduce this from 5rem to move the paragraph up */
-    color: white;
-    font-size: 1rem;
-    text-align: left;
-    border: 1px solid white;
-    margin: 0 auto;
-    max-width: 80%;
-    backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.5);
-    height: auto;
-    justify-content: normal;
-    align-items: normal;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out 0.5s;
+    padding: 3rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #1d1d1f;
 }
 
+.content-container h2 {
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+footer {
+    background-color: #f5f5f7;
+    color: #6e6e73;
+}
+
+footer small {
+    letter-spacing: 0.1rem;
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        min-width: auto;
+    }
+}
